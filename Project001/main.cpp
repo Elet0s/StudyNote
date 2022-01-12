@@ -8,7 +8,7 @@ int main()
 
 	b = 255;
 	// 양수 unsigned signed:양/음수
-	// 종수형 : char(1), short(2), int(4), long(4), long long(4)
+	// 정수형 : char(1), short(2), int(4), long(4), long long(4)
 	// 실수형 : float(4), double(8)
 
 	// 1bit
@@ -72,31 +72,92 @@ int main()
 	data = ++a;
 	/*전위의 경우 11로 적용됨을 알 수 있다*/
 	/*대입연산과 다르게 실직적인 변수값을 증가시킨다.
-	증감연산자는 전위로 사용하도록 한다*/
+	증감연산자는 되도록 전위로 사용하도록 한다 나중에 클래스나 구조체에 오퍼레이터(효율이 안좋은 함수를)실수로 호출할 수 있기 때문
+	연산자 오버로딩을 할 때 상기해야할 내용*/
 
-	//논리 연산자
+	//논리 연산자 (구문이 있는데 조건문과 삼항연산자가 존재하며 연계되서 많이 사용된다.)
 	// 참, 거짓
 	// !(역)리버스, (&&)합and, ||(합)or
 	//참(true), 거짓(false)
-	//1=참 0이아닌 모든수
-	//거짓=0
+	//1=참=true 0이아닌 모든수
+	//거짓=0=false
 	//bool , 
-	bool turefalse = false;//c에서는 전처리기로 사용
+	bool turefalse = false;//c에서는 전처리기로 사용 타입재정리해서
 	bool IsTrue = 100;
-
+	 
 	IsTrue = true;
 
 	IsTrue = !IsTrue;
 
-	int iTrue = 100;
+	int iTrue = 100; //반전이 일반 정수형에도 적용된다.
 	iTrue = !true;
 
 
 	iTrue = 100 && 200; //둘다참이니 1을 준다 
+	iTrue = 0 || 0;
 
+	//비교 연산자
+	// == 양쪽 피연산자가 같은지 
+	// != 양쪽 피연산자가 다른지
+	// <,>,>=,<=
+	// 비교 구문
+	// if, else
+	data = 0;
+	if(0 && 200)
+	{
+		data = 100;
+
+	}
+
+	if (data == 100)
+	{
+		// if가 참이면 수행
+	}
+	else if (100)
+	{
+	}
+	else
+	{
+		// if가 거짓이면 수행
+	}
+	data = 30;
+	if (data == 10 || data == 20 || data == 30)
+	{
+	}
+	else
+	{
+	}
+
+			// swich case
+			int bTest = 20;
+			switch (bTest)
+			{
+			case 10:
+			case 20:
 	
+			default:
+				break;
 
+			}
+	int iTest = 10;
+	if (iTest == 10)
+	{
+	}
+	else if (iTest == 20)
+	{
 
+	}
+	// 삼항 연산자
+	//	:?
+	iTest == 20 ? iTest = 100 : iTest = 200;
 
-	return 0;
-}
+	if (iTest == 20)
+	{
+		iTest = 100;
+	}
+	else
+	{
+		iTest = 200;
+	}
+		return 0;
+}	
