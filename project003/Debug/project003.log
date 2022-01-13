@@ -1,0 +1,4 @@
+﻿  project003.cpp
+E:\c++test\001Work\project003\project003.cpp(19,13): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+E:\c++test\001Work\project003\project003.cpp(95,16): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+  project003.vcxproj -> E:\c++test\001Work\Project001\Debug\project003.exe
