@@ -60,6 +60,20 @@ public:
 		}
 		return A[x][y];
 	}
+	int Block(int x, int y, int A[][10])
+		{
+					A[x][y] = 1;
+					for (a = 0; a < x; a += 1)
+					{
+						for (b = 0; b < y; b += 1)
+						{
+							printf_s("%d", A[a][b]);
+						}
+						printf_s("\n");
+					}
+					return A[x][y]
+	}
+
 public:
 	Map() : a(0), b(0), A{ 0 },x(0),y(0)
 	{
@@ -69,26 +83,72 @@ public:
 class Game
 {
 private:
-	int x;
+    int x;
 	int y;
 	int c;
 
 public:
-
+	int Shift()
+	{
+			scanf_s("%c", c);
+			if (c == 'w' || c == 'W')
+			{
+				return 0;
+			}
+			else if (c == 'a' || c == 'A')
+			{
+				return 1;
+			}
+			else if (c == 's' || c == 'S')
+			{
+				return 2;
+			}
+			else if (c == 'd' || c == 'D')
+			{
+				return 3;
+			}
+	}
 public:
-	Game	() : x(0), y(0), c(0)
+	Game() : x(0), y(0), c(0)
 	{
 		;
 	}
 };
 
+};
 int main()
 {
+	int a = 0; int b = 0;
+	int A[10][10];
 	Map MyMap = Map();
 	Map Mapscanf = Map();
+	Game Start = Game();
 		int x = Mapscanf.XMapscanf();
 		int y = Mapscanf.YMapscnaf();
-		MyMap.Bild(x, y);
+		A[a][b] = MyMap.Bild(x, y);
+		for (;;)
+		{
+			if (Start.Shift() == 0)
+			{
+				if (x > 0) 
+				{
+					x -= 1;
+					//블럭 값을 아무것도 없는 맵에서 출력(x)
+				}
+			}
+			else if (Start.Shift() == 1)
+			{
+				y -= 1;
+			}
+			else if (Start.Shift() == 2)
+			{
+				x += 1;
+			}
+			else if (Start.Shift() == 3)
+			{
+				y += 1;
+			}
+		}
 	_getch();
 	return 0;
 }
