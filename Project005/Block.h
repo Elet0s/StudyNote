@@ -8,7 +8,7 @@ private:
 	int Y;
 	int x;
 	int y;
-	int A[10][10];
+	int A[25][10];
 	char Input;
 public:
 	void map();
@@ -16,4 +16,3 @@ public:
 public:
 	Block();
 };
-
