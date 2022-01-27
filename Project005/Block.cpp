@@ -4,7 +4,7 @@
 #include<iostream>
 
 Block::Block()
-	:xcount(0),ycount(0),A{0},X(0),Y(0) ,Input(0),x(0),y(0)
+	:xcount(0), ycount(0), A{ 0 }, X(0), Y(0), Input(0), x(0), y(0)
 {
 }
 Gamesys BlockGamesys = Gamesys();
@@ -26,7 +26,7 @@ void Block::map()
 			_getch();
 		}
 	}
-	for(;;)
+	for (;;)
 	{
 		system("cls");
 		printf_s("1~10사이의 Y값을 입력해주세요.\n");
@@ -35,7 +35,7 @@ void Block::map()
 		{
 			break;
 		}
-		else 
+		else
 		{
 			printf_s("유효하지 않은 값입니다.\n");
 			_getch();
@@ -71,7 +71,7 @@ void Block::shift()
 				A[x][y] = { 0 };
 				x -= 1;
 				A[x][y] = { 1 };
-
+				
 				BlockGamesys.PrintB(xcount, ycount, X, Y, A);
 			}
 			else
@@ -116,15 +116,16 @@ void Block::shift()
 				x += 1;
 				b = A[x][y];
 				x -= 1;
-				if (BlockGamesys.SitB(a, b) == 0)//이동할 곳에 이미 1이 없으니 이동
+				if (BlockGamesys.SitB(a, b) == 0)//이동할 곳에 블록이 없으니 이동
 				{
 					A[x][y] = { 0 };
 					x += 1;
 					A[x][y] = { 1 };
 					BlockGamesys.PrintB(xcount, ycount, X, Y, A);
 				}
-				else //이동할곳에 1이이미 있으니 초기화
+				else //이동할곳에 블록이 있으니 초기화
 				{
+					A[x][y] = { 2 };
 					BlockGamesys.CheakB(xcount, ycount, X, Y, A);
 					x = 0;
 					y = 0;
@@ -151,7 +152,7 @@ void Block::shift()
 				y += 1;
 				b = A[x][y];
 				y -= 1;
-				if (BlockGamesys.SitB(a,b)==0)//이동할곳 검사
+				if (BlockGamesys.SitB(a, b) == 0)//이동할곳 검사
 				{
 					A[x][y] = { 0 };
 					y += 1;
@@ -167,7 +168,7 @@ void Block::shift()
 			{
 				BlockGamesys.PrintB(xcount, ycount, X, Y, A);
 			}
-			
+
 		}
 		/*
 		열에 블록이 가득 쌓였는지 체크 (보통 아래부터 쌓이니 아래부터 검사 할 것)
